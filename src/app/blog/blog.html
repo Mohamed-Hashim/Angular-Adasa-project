@@ -1,0 +1,77 @@
+<div class="blog-page-container" style="max-width: 1200px; margin: 0 auto; padding: 20px;" dir="rtl">
+  
+  <h2 style="text-align: center; margin-bottom: 30px;">مدونة التصوير الفوتوغرافي</h2>
+
+  <!-- 🔍 قسم صندوق البحث الجديد -->
+  <div class="search-bar-container" style="max-width: 500px; margin: 0 auto 30px; padding: 0 15px;">
+    <input 
+      type="text" 
+      [value]="searchQuery()"
+      (input)="onSearchChange($event)"
+      placeholder="ابحث عن المقالات بكتبابة العنوان أو الكلمات المفتاحية..." 
+      style="width: 100%; padding: 12px 20px; font-size: 1rem; border: 2px solid #ddd; border-radius: 30px; outline: none; transition: border-color 0.2s; box-sizing: border-box;"
+      onfocus="this.style.borderColor='#007bff'"
+      onblur="this.style.borderColor='#ddd'"
+    />
+  </div>
+
+  
+  <div class="tags-filter-bar" style="display: flex; gap: 10px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap;">
+    @for (tag of tags(); track tag) {
+      <button 
+        (click)="selectTag(tag)"
+        [style.background-color]="selectedTag() === tag ? '#007bff' : '#f0f0f0'"
+        [style.color]="selectedTag() === tag ? '#fff' : '#333'"
+        style="padding: 8px 16px; border: none; border-radius: 20px; cursor: pointer; font-weight: bold;">
+        {{ tag }}
+      </button>
+    }
+  </div>
+
+  @if (paginatedPosts().length > 0) {
+    <div class="posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px;">
+      
+      @for (post of paginatedPosts(); track post.id) {
+        <div class="card" style="border: 1px solid #ddd; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <img [src]="post.image" [alt]="post.title" style="width: 100%; height: 200px; object-fit: cover;">
+          <div class="card-body" style="padding: 20px;">
+            <span style="background: #e3f2fd; color: #0d47a1; padding: 4px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold;">
+              {{ post.category }}
+            </span>
+            <h3 style="font-size: 1.25rem; margin: 15px 0 10px;">{{ post.title }}</h3>
+            <p style="color: #666; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">{{ post.excerpt }}</p>
+            <a [routerLink]="['/blog', post.slug]" class="btn btn-primary" style="display: inline-block; background: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+             More
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+
+  
+    @if (totalPages() > 1) {
+      <div class="pagination-bar" style="display: flex; gap: 8px; justify-content: center; margin-top: 50px; align-items: center;">
+        <button (click)="goToPage(currentPage() - 1)" [disabled]="currentPage() === 1" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; background: #fff;">السابق</button>
+
+        @for (pageNum of pageNumbers(); track pageNum) {
+          <button 
+            (click)="goToPage(pageNum)"
+            [style.background-color]="currentPage() === pageNum ? '#007bff' : '#fff'"
+            [style.color]="currentPage() === pageNum ? '#fff' : '#007bff'"
+            [style.border-color]="currentPage() === pageNum ? '#007bff' : '#ddd'"
+            style="padding: 8px 14px; border: 1px solid; border-radius: 6px; cursor: pointer; font-weight: bold;">
+            {{ pageNum }}
+          </button>
+        }
+
+        <button (click)="goToPage(currentPage() + 1)" [disabled]="currentPage() === totalPages()" style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; cursor: pointer; background: #fff;">التالي</button>
+      </div>
+    }
+
+  } @else {
+    <div style="text-align: center; color: #888; margin-top: 40px;">
+      <p style="font-size: 1.2rem;">لم نجد أي مقالات تطابق بحثك عن: <strong>"{{ searchQuery() }}"</strong></p>
+      <p style="font-size: 0.9rem;">جرب كتابة كلمات أخرى أو تصفح الأوسمة المتاحة في الأعلى.</p>
+    </div>
+  }
+</div>
