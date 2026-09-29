@@ -1,0 +1,178 @@
+.btn-home {
+  background-color: orangered; /* Replace with your preferred color */
+  color: white;              /* Optional: text color for contrast */
+  border-radius: 15px;        /* Optional styling */
+  padding: 5px 10px;         /* Optional styling */
+}
+
+/* Background setup for the page to match the image context */
+body {
+  background-color: #0b0c10;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl; /* Sets right-to-left layout for Arabic text */
+}
+
+/* Card Styling */
+.stat-card {
+  background-color: #161719;
+  border: 1px solid #22252a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon, Number, and Label formatting */
+.stat-icon {
+  color: #ff7a00; /* Vivid orange from image */
+  font-size: 1.8rem;
+}
+
+.stat-number {
+  color: #ff7a00;
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+}
+
+.stat-label {
+  color: #71767e !important;
+  font-size: 0.95rem;
+}
+
+/* Custom Page styling */
+body {
+  background-color: #0b0c10;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom Utilities */
+.x-small {
+  font-size: 0.75rem;
+}
+
+/* Top Right Button */
+.btn-orange {
+  background-color: #e65c00;
+  border: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+.btn-orange:hover {
+  background-color: #cc5200;
+}
+
+/* Feature Container Styling */
+.card-featured {
+  background-color: #161719;
+  border: 1px solid #22252a;
+}
+
+.article-title {
+  color: #f8f9fa;
+  font-size: 1.75rem;
+}
+
+/* Metadata Badges */
+.badge-category {
+  background-color: rgba(230, 92, 0, 0.15);
+  color: #ff7a00;
+  font-size: 0.85rem;
+}
+
+.badge-featured {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  z-index: 10;
+}
+
+/* Bottom CTA link */
+.read-link {
+  color: #ff7a00;
+  font-size: 0.95rem;
+}
+.read-link:hover {
+  color: #ff9433;
+}
+
+/* Responsive Image Area Container */
+.featured-img-bg {
+  background-size: cover;
+  background-position: center;
+  min-height: 300px; /* Ensures a height for stacking layout modes on mobile */
+}
+
+@media (min-width: 992px) {
+  .featured-img-bg {
+    min-height: 100%;
+  }
+}
+/* Color updates for the spinner loader element */
+.text-orange {
+  color: #ff7a00 !important;
+}
+
+/* Dashboard page configuration wrapper styles */
+.dashboard-wrapper {
+  background-color: #0b0c10;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.x-small {
+  font-size: 0.75rem;
+}
+
+/* Stats Element Panels CSS Styles */
+.stat-card {
+  background-color: #161719;
+  border: 1px solid #22252a;
+}
+.stat-icon, .stat-number {
+  color: #ff7a00;
+}
+.stat-number {
+  font-size: 2.2rem;
+}
+.stat-label {
+  color: #71767e !important;
+}
+
+/* Card components styling declarations */
+.btn-orange {
+  background-color: #e65c00;
+  border: none;
+}
+.card-featured {
+  background-color: #161719;
+  border: 1px solid #22252a;
+}
+.article-title {
+  color: #f8f9fa;
+  font-size: 1.75rem;
+}
+.badge-category {
+  background-color: rgba(230, 92, 0, 0.15);
+  color: #ff7a00;
+}
+.badge-featured {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+.read-link {
+  color: #ff7a00;
+}
+
+.featured-img-bg {
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+}
+@media (min-width: 992px) {
+  .featured-img-bg {
+    min-height: 100%;
+  }
+}

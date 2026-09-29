@@ -1,5 +1,204 @@
-@if (posts().length > 0) {
-    <!-- 👈 إضافة أقواس هنا أيضاً -->
+<main class="flex-grow pt-20">
+<section class="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0a0a0a]">
+  <!-- Grid Background Overlay -->
+<div class="position-absolute top-0 start-0 end-0 bottom-0" 
+     style="background-image: linear-gradient(rgba(38,38,38,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(38,38,38,0.5) 1px, transparent 1px); background-size: 60px 60px;">
+</div> 
+
+<!-- Top Left Blob -->
+<div class="position-absolute rounded-circle blob" 
+     style="top: 5rem; left: 2.5rem; width: 18rem; height: 18rem; background-color: rgba(249, 115, 22, 0.1); filter: blur(64px);">
+</div>
+
+<!-- Bottom Right Blob -->
+<div class="position-absolute rounded-circle blob" 
+     style="bottom: 5rem; right: 2.5rem; width: 24rem; height: 24rem; background-color: rgba(234, 179, 8, 0.05); filter: blur(64px); animation-delay: -2s;">
+</div>
+
+<!-- Center Blob -->
+<div class="position-absolute top-55 start-50 translate-middle rounded-circle" 
+     style="width: 500px; height: 500px; background-color: rgba(249, 115, 22, 0.05); filter: blur(64px);">
+</div>
+
+<!-- Main Content Container -->
+<div class="position-relative container-xl px-3 px-sm-4 px-lg-5 py-5" style="max-width: 1280px;">
+   <div class="text-center mx-auto" style="max-width: 56rem;">
+  <!-- Section Label -->
+  <div class="section-label d-inline-flex align-items-center gap-2 mb-4 animate-fade-in">
+    <span class="position-relative d-flex" style="width: 0.5rem; height: 0.5rem;">
+      <!-- Ping effect requires custom CSS class 'animate-ping' or standard CSS -->
+      <span class="animate-ping position-absolute d-inline-flex h-100 w-100 rounded-circle bg-warning opacity-75"></span>
+      <span class="position-relative d-inline-flex rounded-circle bg-warning" style="width: 0.5rem; height: 0.5rem;"></span>
+    </span>
+    <span class="small font-medium text-light-emphasis">مرحباً بك في عدسة</span>
+  </div> 
+
+  <!-- Heading -->
+  <h1 class="display-3 font-bold text-white mb-3 lh-sm tracking-tight" style="font-weight: 700;">
+    اكتشف فن التصوير الفوتوغرافي
+  </h1>
+
+  <!-- Paragraph -->
+  <p class="text-white-50">انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.</p>
+
+  <!-- CTA Buttons -->
+  <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+    <a class="btn btn-home d-inline-flex align-items-center justify-content-center gap-2 group" routerLink="/blog">
+      <span>استكشف المقالات</span>
+      <!-- Arrow SVG -->
+      <svg class="transition-transform rotate-180" style="width: 1.25rem; height: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"></svg>
+    </a>
+    <a class="btn btn-secondary d-inline-flex align-items-center justify-content-center gap-2" routerLink="/about">
+      تعرف على المزيد
+    </a>
+  </div>
+   <div class="container my-5">
+  <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center text-center">
+    
+    <!-- Card 1: Writers -->
+    <div class="col">
+      <div class="stat-card p-4 rounded-4 h-100">
+        <div class="stat-icon mb-2">
+          <!-- Fountain Pen Icon -->
+          <i class="bi bi-pen-fill"></i>
+        </div>
+        <div class="stat-number fw-bold mb-1">6</div>
+        <div class="stat-label text-muted">كاتب</div>
+      </div>
+    </div>
+
+    <!-- Card 2: Categories -->
+    <div class="col">
+      <div class="stat-card p-4 rounded-4 h-100">
+        <div class="stat-icon mb-2">
+          <!-- Folder Icon -->
+          <i class="bi bi-folder-fill"></i>
+        </div>
+        <div class="stat-number fw-bold mb-1">4</div>
+        <div class="stat-label text-muted">تصنيفات</div>
+      </div>
+    </div>
+
+    <!-- Card 3: Readers -->
+    <div class="col">
+      <div class="stat-card p-4 rounded-4 h-100">
+        <div class="stat-icon mb-2">
+          <!-- People Icon -->
+          <i class="bi bi-people-fill"></i>
+        </div>
+        <div class="stat-number fw-bold mb-1">10+ ألف</div>
+        <div class="stat-label text-muted">قارئ</div>
+      </div>
+    </div>
+
+    <!-- Card 4: Articles -->
+    <div class="col">
+      <div class="stat-card p-4 rounded-4 h-100">
+        <div class="stat-icon mb-2">
+          <!-- Newspaper Icon -->
+          <i class="bi bi-newspaper"></i>
+        </div>
+        <div class="stat-number fw-bold mb-1">50+</div>
+        <div class="stat-label text-muted">مقالة</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container my-5 text-white" dir="rtl">
+  <!-- Header Section -->
+  <div class="d-flex justify-content-between align-items-end mb-4">
+    <div>
+      <h2 class="fw-bold mb-2">مقالات مختارة</h2>
+      <p class="text-muted small mb-0">محتوى منتقى لبدء رحلة تعلمك</p>
+    </div>
+    <div>
+      <a routerLink="/blog" class="btn btn-orange text-white px-3 py-2 rounded-3 d-flex align-items-center gap-2">
+        عرض الكل 
+        <i class="bi bi-chevron-left small"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Dynamic Loop Container -->
+    @if (posts().length > 0) {
+      <div class="d-flex flex-column gap-4">
+        @for (post of posts().slice(0, 3); track post.id) {
+          
+          <!-- Unified Dark Style Card Layout -->
+          <div class="card-featured rounded-4 overflow-hidden w-100">
+            <div class="row g-0 align-items-stretch">
+              
+              <!-- Content Block Column -->
+              <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex align-items-center gap-3 mb-4 text-muted small">
+                    <span class="badge-category rounded-pill px-3 py-1">{{ post.category || 'إضاءة' }}</span>
+                    <span class="d-flex align-items-center gap-1">
+                      <i class="bi bi-clock"></i> {{ post.readTime || '8 دقائق' }}
+                    </span>
+                  </div>
+                  
+                  <h3 class="fw-bold mb-3 article-title">{{ post.title }}</h3>
+                  <p class="text-muted leading-relaxed lh-base">{{ post.content }}</p>
+                </div>
+
+                <!-- Footer Author Block -->
+                <div class="d-flex justify-content-between align-items-center mt-5">
+                  <div class="d-flex align-items-center gap-2">
+                    <img [src]="post.authorImage || 'https://placeholder.com'" [alt]="post.authorName || 'كاتب'" class="rounded-circle border border-secondary" width="40" height="40">
+                    <div>
+                      <div class="fw-semibold small">{{ post.authorName || 'سالم أحمد' }}</div>
+                      <div class="text-muted x-small">{{ post.date || 'مؤخراً' }}</div>
+                    </div>
+                  </div>
+                  
+                  <!-- Angular Routing Navigation -->
+                  <a [routerLink]="['/blog', post.slug]" routerLinkActive="active" class="read-link text-decoration-none d-flex align-items-center gap-2 fw-semibold">
+                    اقرأ المقال
+                    <i class="bi bi-arrow-left"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Media Showcase Image Column -->
+              <div class="col-lg-6 position-relative min-vh-50">
+                @if (post.isFeatured !== false) {
+                  <span class="badge-featured position-absolute top-0 end-0 m-4 rounded-pill px-3 py-1 d-flex align-items-center gap-1 small">
+                    <i class="bi bi-star-fill text-warning"></i> مميز
+                  </span>
+                }
+                <div class="featured-img-bg h-100 w-100" [style.background-image]="'url(' + post.image + ')'"></div>
+              </div>
+
+            </div>
+          </div>
+
+        }
+      </div>
+    } @else {
+      <!-- Loading Placeholder State -->
+      <div class="text-center py-5">
+        <div class="spinner-border text-orange mb-3" role="status"></div>
+        <p class="text-muted">جاري التحميل....</p>
+      </div>
+    }
+  </div>
+
+</section>
+
+</main>
+
+
+
+
+<!-- @if (posts().length > 0) {
+    
     @for (post of posts(); track post.id) {
     <div class="card" style="width: 18rem;">
       <img [src]="post.image" [alt]="post.title" class="card-img-top">
@@ -12,4 +211,4 @@
     }
 } @else {
     <p>Loading....</p>
-}
+} -->

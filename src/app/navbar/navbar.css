@@ -1,0 +1,14 @@
+.active-link {
+  background-color: orangered; /* Replace with your preferred color */
+  color: white;              /* Optional: text color for contrast */
+  border-radius: 15px;        /* Optional styling */
+  padding: 5px 10px;         /* Optional styling */
+}
+
+.btn-navbar {
+  background-color: orangered; /* Replace with your preferred color */
+  color: white;              /* Optional: text color for contrast */
+  border-radius: 15px;        /* Optional styling */
+  padding: 5px 10px;         /* Optional styling */
+}
+
